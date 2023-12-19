@@ -14,8 +14,7 @@ for i in range(quantity):
     array_of_coordinates.append(input().split())
 
 for i in array_of_coordinates:
-    x = int(i[0])
-    y = int(i[1])
+    x, y = int(i[0]), int(i[1])
     if x > 0 and y > 0:
         response_array[0] += 1
     elif x < 0 and y > 0:

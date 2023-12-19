@@ -1,18 +1,12 @@
-# TODO Standard American Convention
+# Standard American Convention
 #
-# На вход программе подаётся натуральное число. Напишите программу,
+# На вход программе подаётся натуральное число (0 < n < 10^100). Напишите программу,
 # которая вставляет в заданное число запятые в соответствии со стандартным
 # американским соглашением о запятых в больших числах.
 
-num = input()
-# str_num =
-# for i in range(len(num) // 3 if len(num) % 3 > 0 else len(num) // 3 - 1):
-#     str_num = num[-1:-3] + ","
-# num0 = list(num)
-# num1=[]
-# print(len(num0))
-# print((len(num0)-1) // 3)
-num0 = int(num)
-for i in range((len(num) - 1) // 3):
-    print(int(num0) % 1000)
-    num0 = num0 // 1000
+num_str = input()
+num_len, num_list = (len(num_str) // 3) - 1 if len(num_str) % 3 == 0 else len(num_str) // 3, []
+for i in range(num_len + 1):
+    num_list.insert(0, num_str[-3:])
+    num_str = num_str[0:-3]
+print(*num_list, sep=",")
